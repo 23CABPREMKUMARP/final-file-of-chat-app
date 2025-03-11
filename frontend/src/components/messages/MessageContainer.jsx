@@ -21,8 +21,17 @@ const MessageContainer = () => {
 				<>
 					{/* Header */}
 					<div className='bg-slate-500 px-4 py-2 mb-2'>
-						<span className='label-text'>To:</span>{" "}
-						<span className='text-gray-900 font-bold'>{selectedConversation.fullName}</span>
+					
+					<div className="bg-gray-800 p-2 rounded-lg inline-block shadow-lg">
+  <span className="bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold text-lg">
+    To:
+  </span>
+  <span className="ml-2 text-gray-200 font-medium text-lg">
+    {selectedConversation.fullName}
+  </span>
+</div>
+
+
 					</div>
 					<Messages />
 					<MessageInput />

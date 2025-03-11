@@ -14,46 +14,56 @@ const Login = () => {
 	};
 
 	return (
-		<div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
-			<div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
-				<h1 className='text-3xl font-semibold text-center text-gray-300'>
-					Login
-					<span className='text-blue-500'> ChatApp</span>
+		<div className="flex flex-col items-center justify-center min-w-96 mx-auto">
+			<div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+				<h1 className="text-3xl font-semibold text-center text-gray-300">
+					Login <span className="text-blue-500">ChatApp</span>
 				</h1>
 
 				<form onSubmit={handleSubmit}>
 					<div>
-						<label className='label p-2'>
-							<span className='text-base label-text'>Username</span>
+						<label className="label p-2">
+							<span className="text-base label-text text-white">Username</span>
 						</label>
 						<input
-							type='text'
-							placeholder='Enter username'
-							className='w-full input input-bordered h-10'
+							type="text"
+							placeholder="Enter username"
+							className="w-full input input-bordered h-10 bg-transparent text-white border-white focus:border-blue-500"
 							value={username}
 							onChange={(e) => setUsername(e.target.value)}
 						/>
 					</div>
 
 					<div>
-						<label className='label'>
-							<span className='text-base label-text'>Password</span>
+						<label className="label">
+							<span className="text-base label-text text-white">Password</span>
 						</label>
 						<input
-							type='password'
-							placeholder='Enter Password'
-							className='w-full input input-bordered h-10'
+							type="password"
+							placeholder="Enter Password"
+							className="w-full input input-bordered h-10 bg-transparent text-white border-white focus:border-blue-500"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</div>
-					<Link to='/signup' className='text-sm  hover:underline hover:text-blue-600 mt-2 inline-block'>
+
+					<Link
+						to="/signup"
+						className="text-sm text-red-500 hover:text-blue-600 hover:underline mt-2 inline-block"
+					>
 						{"Don't"} have an account?
 					</Link>
 
-					<div>
-						<button className='btn btn-block btn-sm mt-2' disabled={loading}>
-							{loading ? <span className='loading loading-spinner '></span> : "Login"}
+					{/* Centering the button */}
+					<div className="flex justify-center mt-4">
+						<button
+							className="btn text-white text-lg px-6 py-3 bg-gradient-to-r from-blue-500 to-red-500 hover:from-red-500 hover:to-blue-500 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
+							disabled={loading}
+						>
+							<span
+								className="absolute inset-0 bg-white opacity-20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out"
+							></span>
+							{loading ? <span className="loading loading-spinner"></span> : "Login"}
 						</button>
 					</div>
 				</form>
@@ -61,46 +71,5 @@ const Login = () => {
 		</div>
 	);
 };
+
 export default Login;
-
-// STARTER CODE FOR THIS FILE
-// const Login = () => {
-// 	return (
-// 		<div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
-// 			<div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
-// 				<h1 className='text-3xl font-semibold text-center text-gray-300'>
-// 					Login
-// 					<span className='text-blue-500'> ChatApp</span>
-// 				</h1>
-
-// 				<form>
-// 					<div>
-// 						<label className='label p-2'>
-// 							<span className='text-base label-text'>Username</span>
-// 						</label>
-// 						<input type='text' placeholder='Enter username' className='w-full input input-bordered h-10' />
-// 					</div>
-
-// 					<div>
-// 						<label className='label'>
-// 							<span className='text-base label-text'>Password</span>
-// 						</label>
-// 						<input
-// 							type='password'
-// 							placeholder='Enter Password'
-// 							className='w-full input input-bordered h-10'
-// 						/>
-// 					</div>
-// 					<a href='#' className='text-sm  hover:underline hover:text-blue-600 mt-2 inline-block'>
-// 						{"Don't"} have an account?
-// 					</a>
-
-// 					<div>
-// 						<button className='btn btn-block btn-sm mt-2'>Login</button>
-// 					</div>
-// 				</form>
-// 			</div>
-// 		</div>
-// 	);
-// };
-// export default Login;
