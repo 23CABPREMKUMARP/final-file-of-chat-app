@@ -2,7 +2,7 @@ services:
   - type: web
     name: mern-app
     runtime: node
-    repo: https://github.com/yourusername/yourrepository
+    repo: https://github.com/23CABPREMKUMARP/final-file-of-chat-app.git
     branch: main
     buildCommand: npm install && npm run build
     startCommand: npm start
