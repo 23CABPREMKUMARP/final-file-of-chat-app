@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: mern-app
+    runtime: node
+    repo: https://github.com/yourusername/yourrepository
+    branch: main
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: PORT
+        value: 5000
